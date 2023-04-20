@@ -68,11 +68,11 @@ public class Permesso implements Serializable{
 	}
 
 	public Impiegati getImpiegato() {
-		return impiegato;
+		return impiegati;
 	}
 
 	public void setImpiegato(Impiegati impiegato) {
-		this.impiegato = impiegato;
+		this.impiegati = impiegato;
 	}
 	
 	
