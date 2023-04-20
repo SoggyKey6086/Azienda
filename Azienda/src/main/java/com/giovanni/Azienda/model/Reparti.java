@@ -19,7 +19,7 @@ public class Reparti implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idRep;
+	private int idRep;
 	
 	@Column(nullable = false)
 	private String nome;
@@ -31,11 +31,11 @@ public class Reparti implements Serializable{
 	private Set<DatiAziendali> da = new HashSet<DatiAziendali>();
 	
 	
-	public long getIdRep() {
+	public int getIdRep() {
 		return idRep;
 	}
 
-	public void setIdRep(long idRep) {
+	public void setIdRep(int idRep) {
 		this.idRep = idRep;
 	}
 
