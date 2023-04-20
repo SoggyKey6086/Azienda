@@ -28,7 +28,7 @@ public class Bonus implements Serializable {
 	private float importo;
 
 	@ManyToOne
-	@JoinColumn(name = "id_bonus", nullable = false)
+	@JoinColumn(name = "id_imp", nullable = false)
 	private Impiegati impiegatoB;
 
 	public int getIdB() {

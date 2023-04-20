@@ -3,7 +3,6 @@ package com.giovanni.Azienda.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +28,7 @@ public class Ferie implements Serializable {
 	@Column(nullable = false)
 	private LocalDate dataFineFerie;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "id_imp", nullable = false)
 	private Impiegati impiegatoF;
 

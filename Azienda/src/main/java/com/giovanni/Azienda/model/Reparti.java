@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -29,6 +31,10 @@ public class Reparti implements Serializable{
 	
 	@OneToMany(mappedBy = "reparto",cascade = CascadeType.ALL)
 	private Set<DatiAziendali> da = new HashSet<DatiAziendali>();
+	
+	@ManyToOne
+	@JoinColumn(name = "id_imp", nullable = false)
+	private Impiegati impiegatoReparti;
 	
 	
 	public int getIdRep() {

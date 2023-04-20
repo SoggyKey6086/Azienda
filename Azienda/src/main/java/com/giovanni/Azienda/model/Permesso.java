@@ -32,7 +32,7 @@ public class Permesso implements Serializable{
 	private String motivo;
 	
 	@ManyToOne
-	@JoinColumn(name="id_permesso", nullable=false)
+	@JoinColumn(name="id_imp", nullable=false)
 	private Impiegati impiegatoPer;
 
 	public int getIdPer() {

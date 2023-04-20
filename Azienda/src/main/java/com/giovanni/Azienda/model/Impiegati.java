@@ -56,6 +56,18 @@ public class Impiegati implements Serializable {
 	@OneToMany(mappedBy = "impiegatoB", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Bonus> bonus = new HashSet<Bonus>();
+	
+	@OneToMany(mappedBy = "impiegatoReparti", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Reparti> reparti = new HashSet<Reparti>();
+
+	public Set<Reparti> getReparti() {
+		return reparti;
+	}
+
+	public void setReparti(Set<Reparti> reparti) {
+		this.reparti = reparti;
+	}
 
 	public Set<Permesso> getPermesso() {
 		return permesso;
