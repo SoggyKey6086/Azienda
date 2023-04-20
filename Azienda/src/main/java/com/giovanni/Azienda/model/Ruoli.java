@@ -48,6 +48,4 @@ public class Ruoli implements Serializable{
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
-	
-	
 }
