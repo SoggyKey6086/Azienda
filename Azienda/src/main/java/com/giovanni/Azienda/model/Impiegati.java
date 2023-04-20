@@ -1,22 +1,100 @@
 package com.giovanni.Azienda.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-public class Impiegati implements Serializable{
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table
+public class Impiegati implements Serializable {
 	private static final long serialVersionUID = -1821041931068958512L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idImp;
-	
-	@Column(nullable = false)
-	private String marca;
 
+	@Column(nullable = false)
+	private String nome;
+
+	@Column(nullable = false)
+	private String cognome;
+
+	@Column(nullable = false)
+	private String citta;
+
+	@Column(nullable = false)
+	private String cap;
 	
+	@OneToMany(mappedBy = "impiegatoF", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Ferie> ferie = new HashSet<Ferie>();
 	
+	@OneToMany(mappedBy = "impiegatoPer", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Permesso> permesso = new HashSet<Permesso>();
+	
+	@OneToMany(mappedBy = "impiegatoPre", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Presenza> presenza = new HashSet<Presenza>();
+	
+	@OneToMany(mappedBy = "impiegatoS", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Salario> salario = new HashSet<Salario>();
+	
+	@OneToMany(mappedBy = "impiegatoB", cascade = CascadeType.ALL)
+	@JsonIgnore
+	private Set<Bonus> bonus = new HashSet<Bonus>();
+	
+
+	public long getIdImp() {
+		return idImp;
+	}
+
+	public void setIdImp(long idImp) {
+		this.idImp = idImp;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public String getCitta() {
+		return citta;
+	}
+
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+
+	public String getCap() {
+		return cap;
+	}
+
+	public void setCap(String cap) {
+		this.cap = cap;
+	}
+
 }
