@@ -2,6 +2,7 @@ package com.giovanni.Azienda.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,7 +12,10 @@ public class Impiegati implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long idImp;
+	
+	@Column(nullable = false)
+	private String marca;
 
 	
 	
