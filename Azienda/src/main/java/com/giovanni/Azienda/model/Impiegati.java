@@ -22,6 +22,7 @@ public class Impiegati implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_imp")
 	private int idImp;
 
 	@Column(nullable = false)
@@ -35,28 +36,67 @@ public class Impiegati implements Serializable {
 
 	@Column(nullable = false)
 	private String cap;
-	
+
 	@OneToMany(mappedBy = "impiegatoF", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Ferie> ferie = new HashSet<Ferie>();
-	
+
 	@OneToMany(mappedBy = "impiegatoPer", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Permesso> permesso = new HashSet<Permesso>();
-	
+
 	@OneToMany(mappedBy = "impiegatoPre", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Presenze> presenza = new HashSet<Presenze>();
-	
+
 	@OneToMany(mappedBy = "impiegatoS", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Salario> salario = new HashSet<Salario>();
-	
+
 	@OneToMany(mappedBy = "impiegatoB", cascade = CascadeType.ALL)
 	@JsonIgnore
 	private Set<Bonus> bonus = new HashSet<Bonus>();
-	
-	
+
+	public Set<Permesso> getPermesso() {
+		return permesso;
+	}
+
+	public void setPermesso(Set<Permesso> permesso) {
+		this.permesso = permesso;
+	}
+
+	public Set<Presenze> getPresenza() {
+		return presenza;
+	}
+
+	public void setPresenza(Set<Presenze> presenza) {
+		this.presenza = presenza;
+	}
+
+	public Set<Salario> getSalario() {
+		return salario;
+	}
+
+	public void setSalario(Set<Salario> salario) {
+		this.salario = salario;
+	}
+
+	public Set<Bonus> getBonus() {
+		return bonus;
+	}
+
+	public void setBonus(Set<Bonus> bonus) {
+		this.bonus = bonus;
+	}
+
+	public Set<Ferie> getFerie() {
+		return ferie;
+	}
+
+	public void setFerie(Set<Ferie> ferie) {
+		this.ferie = ferie;
+	}
+
 	public int getIdImp() {
 		return idImp;
 	}

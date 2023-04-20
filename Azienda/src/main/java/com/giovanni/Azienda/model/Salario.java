@@ -28,7 +28,7 @@ public class Salario implements Serializable {
 	private float importo;
 
 	@ManyToOne
-	@JoinColumn(name = "id_salario", nullable = false)
+	@JoinColumn(name = "id_imp", nullable = false)
 	private Impiegati impiegatoS;
 
 	public int getIdS() {
@@ -63,4 +63,5 @@ public class Salario implements Serializable {
 		this.impiegatoS = impiegatoS;
 	}
 
+	
 }

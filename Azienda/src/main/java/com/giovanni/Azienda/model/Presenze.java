@@ -17,25 +17,23 @@ import javax.persistence.Table;
 @Table
 public class Presenze implements Serializable {
 	private static final long serialVersionUID = 4256094607960615357L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idPre;
-	
-	@Column 
+
+	@Column
 	private LocalDate data;
-	
+
 	@Column
 	private LocalTime orario_inizio;
-	
-	@Column 
+
+	@Column
 	private LocalTime orario_fine;
-	
+
 	@ManyToOne
-	@JoinColumn(name="id_imp", nullable = false)
-	private Impiegati impiegati;
-	
-	
+	@JoinColumn(name = "id_imp", nullable = false)
+	private Impiegati impiegatoPre;
 
 	public Long getIdPre() {
 		return idPre;
@@ -69,12 +67,12 @@ public class Presenze implements Serializable {
 		this.orario_fine = orario_fine;
 	}
 
-	public Impiegati getImpiegati() {
-		return impiegati;
+	public Impiegati getImpiegatoPre() {
+		return impiegatoPre;
 	}
 
-	public void setImpiegati(Impiegati impiegati) {
-		this.impiegati = impiegati;
-	} 
-	
+	public void setImpiegatoPre(Impiegati impiegatoPre) {
+		this.impiegatoPre = impiegatoPre;
+	}
+
 }

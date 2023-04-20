@@ -32,8 +32,8 @@ public class Permesso implements Serializable{
 	private String motivo;
 	
 	@ManyToOne
-	@JoinColumn(name="id_imp", nullable=false)
-	private Impiegati impiegati;
+	@JoinColumn(name="id_permesso", nullable=false)
+	private Impiegati impiegatoPer;
 
 	public int getIdPer() {
 		return idPer;
@@ -67,13 +67,17 @@ public class Permesso implements Serializable{
 		this.motivo = motivo;
 	}
 
-	public Impiegati getImpiegato() {
-		return impiegati;
+	public Impiegati getImpiegatoPer() {
+		return impiegatoPer;
 	}
 
-	public void setImpiegato(Impiegati impiegato) {
-		this.impiegati = impiegato;
+	public void setImpiegatoPer(Impiegati impiegatoPer) {
+		this.impiegatoPer = impiegatoPer;
 	}
+
+
+
+	
 	
 	
 }
