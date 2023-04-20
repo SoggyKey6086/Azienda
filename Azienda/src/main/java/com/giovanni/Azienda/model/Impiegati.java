@@ -46,7 +46,7 @@ public class Impiegati implements Serializable {
 	
 	@OneToMany(mappedBy = "impiegatoPre", cascade = CascadeType.ALL)
 	@JsonIgnore
-	private Set<Presenza> presenza = new HashSet<Presenza>();
+	private Set<Presenze> presenza = new HashSet<Presenze>();
 	
 	@OneToMany(mappedBy = "impiegatoS", cascade = CascadeType.ALL)
 	@JsonIgnore

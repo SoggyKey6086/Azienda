@@ -1,7 +1,6 @@
 package com.giovanni.Azienda.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.persistence.Column;
@@ -45,19 +44,19 @@ public class Turni implements Serializable{
 		this.nome = nome;
 	}
 
-	public LocalDate getData_inizio() {
+	public LocalTime getData_inizio() {
 		return data_inizio;
 	}
 
-	public void setData_inizio(LocalDate data_inizio) {
+	public void setData_inizio(LocalTime data_inizio) {
 		this.data_inizio = data_inizio;
 	}
 
-	public LocalDate getData_fine() {
+	public LocalTime getData_fine() {
 		return data_fine;
 	}
 
-	public void setData_fine(LocalDate data_fine) {
+	public void setData_fine(LocalTime data_fine) {
 		this.data_fine = data_fine;
 	}
 	
