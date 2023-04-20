@@ -17,7 +17,7 @@ public class Ruoli implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	private long id_ruoli;
+	private int idR;
 	
 	@Column
 	private String nome;
@@ -25,12 +25,12 @@ public class Ruoli implements Serializable{
 	@Column
 	private String descrizione;
 
-	public long getId_ruoli() {
-		return id_ruoli;
+	public long getIdR() {
+		return idR;
 	}
 
-	public void setId_ruoli(long id_ruoli) {
-		this.id_ruoli = id_ruoli;
+	public void setIdR(int idR) {
+		this.idR = idR;
 	}
 
 	public String getNome() {

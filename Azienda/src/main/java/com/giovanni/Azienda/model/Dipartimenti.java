@@ -17,7 +17,7 @@ public class Dipartimenti implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long IdDip;
+    private int IdDip;
     
     @Column(nullable = false)
 	private String nome;
@@ -26,11 +26,11 @@ public class Dipartimenti implements Serializable {
 	private String descrizione;
 	
 
-	public Long getIdDip() {
+	public int getIdDip() {
 		return IdDip;
 	}
 
-	public void setIdDip(Long idDip) {
+	public void setIdDip(int idDip) {
 		IdDip = idDip;
 	}
 

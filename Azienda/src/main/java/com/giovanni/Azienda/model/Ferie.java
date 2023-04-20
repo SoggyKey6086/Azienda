@@ -19,7 +19,7 @@ public class Ferie implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idF;
+	private int idF;
 
 	@Column(nullable = false)
 	private LocalDate dataInizioFerie;
@@ -31,11 +31,11 @@ public class Ferie implements Serializable {
 	@JoinColumn(name = "id_ferie", nullable = false)
 	private Impiegati impiegatoF;
 
-	public long getIdF() {
+	public int getIdF() {
 		return idF;
 	}
 
-	public void setIdF(long idF) {
+	public void setIdF(int idF) {
 		this.idF = idF;
 	}
 

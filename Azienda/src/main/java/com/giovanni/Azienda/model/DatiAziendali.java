@@ -1,7 +1,7 @@
 package com.giovanni.Azienda.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,10 +25,10 @@ public class DatiAziendali implements Serializable{
 	private String email;
 	
 	@Column(nullable = false)
-	private Date data_nascita;
+	private LocalDate data_nascita;
 	
 	@Column(nullable = false)
-	private Date data_assunzione;
+	private LocalDate data_assunzione;
 	
 	@Column(nullable = false)
 	private float salario;
@@ -53,19 +53,19 @@ public class DatiAziendali implements Serializable{
 		this.email = email;
 	}
 
-	public Date getData_nascita() {
+	public LocalDate getData_nascita() {
 		return data_nascita;
 	}
 
-	public void setData_nascita(Date data_nascita) {
+	public void setData_nascita(LocalDate data_nascita) {
 		this.data_nascita = data_nascita;
 	}
 
-	public Date getData_assunzione() {
+	public LocalDate getData_assunzione() {
 		return data_assunzione;
 	}
 
-	public void setData_assunzione(Date data_assunzione) {
+	public void setData_assunzione(LocalDate data_assunzione) {
 		this.data_assunzione = data_assunzione;
 	}
 

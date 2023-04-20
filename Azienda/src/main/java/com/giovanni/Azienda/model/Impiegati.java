@@ -22,7 +22,7 @@ public class Impiegati implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idImp;
+	private int idImp;
 
 	@Column(nullable = false)
 	private String nome;
@@ -56,12 +56,12 @@ public class Impiegati implements Serializable {
 	@JsonIgnore
 	private Set<Bonus> bonus = new HashSet<Bonus>();
 	
-
-	public long getIdImp() {
+	
+	public int getIdImp() {
 		return idImp;
 	}
 
-	public void setIdImp(long idImp) {
+	public void setIdImp(int idImp) {
 		this.idImp = idImp;
 	}
 
