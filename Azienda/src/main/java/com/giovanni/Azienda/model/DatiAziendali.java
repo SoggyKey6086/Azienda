@@ -35,7 +35,7 @@ public class DatiAziendali implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="id_rep", nullable=false)
-	private Reparto reparto;
+	private Reparti reparto;
 
 	public long getIdDA() {
 		return idDA;
@@ -77,11 +77,11 @@ public class DatiAziendali implements Serializable{
 		this.salario = salario;
 	}
 
-	public Reparto getReparto() {
+	public Reparti getReparto() {
 		return reparto;
 	}
 
-	public void setReparto(Reparto reparto) {
+	public void setReparto(Reparti reparto) {
 		this.reparto = reparto;
 	}
 	
