@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -57,16 +59,17 @@ public class Impiegati implements Serializable {
 	@JsonIgnore
 	private Set<Bonus> bonus = new HashSet<Bonus>();
 	
-	@OneToMany(mappedBy = "impiegatoReparti", cascade = CascadeType.ALL)
-	@JsonIgnore
-	private Set<Reparti> reparti = new HashSet<Reparti>();
+	@ManyToOne
+	@JoinColumn(name = "id_rep", nullable = false)
+	private Reparti repartiImp;
 
-	public Set<Reparti> getReparti() {
-		return reparti;
+	
+	public Reparti getRepartiImp() {
+		return repartiImp;
 	}
 
-	public void setReparti(Set<Reparti> reparti) {
-		this.reparti = reparti;
+	public void setRepartiImp(Reparti repartiImp) {
+		this.repartiImp = repartiImp;
 	}
 
 	public Set<Permesso> getPermesso() {

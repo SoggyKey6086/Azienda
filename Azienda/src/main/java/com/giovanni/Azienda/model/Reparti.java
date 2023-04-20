@@ -3,14 +3,13 @@ package com.giovanni.Azienda.model;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -32,11 +31,17 @@ public class Reparti implements Serializable{
 	@OneToMany(mappedBy = "reparto",cascade = CascadeType.ALL)
 	private Set<DatiAziendali> da = new HashSet<DatiAziendali>();
 	
-	@ManyToOne
-	@JoinColumn(name = "id_imp", nullable = false)
-	private Impiegati impiegatoReparti;
+	@OneToMany(mappedBy = "repartiImp", cascade = CascadeType.ALL)
+	private Set<Impiegati> imp = new HashSet<Impiegati>();
 	
-	
+	public Set<Impiegati> getImp() {
+		return imp;
+	}
+
+	public void setImp(Set<Impiegati> imp) {
+		this.imp = imp;
+	}
+
 	public int getIdRep() {
 		return idRep;
 	}
