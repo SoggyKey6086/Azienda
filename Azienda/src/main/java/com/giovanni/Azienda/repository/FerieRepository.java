@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.giovanni.Azienda.model.Ferie;
-@Repository
+@Repository("ferieRepository")
 public interface FerieRepository extends JpaRepository<Ferie, String>{
 	
 	@Query(value = "Select * from reparti where  = ?1", nativeQuery = true)

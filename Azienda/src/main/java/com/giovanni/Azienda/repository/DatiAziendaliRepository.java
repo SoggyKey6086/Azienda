@@ -13,6 +13,5 @@ public interface DatiAziendaliRepository extends JpaRepository <DatiAziendali, I
 	
 	@Query(value= "Select * from datiaziendali where id_DA = ?1", nativeQuery = true)
 	Optional<DatiAziendali> findById(long id);
-	
-	
+		
 }
