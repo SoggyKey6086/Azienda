@@ -74,10 +74,4 @@ public class Permesso implements Serializable{
 	public void setImpiegatoPer(Impiegati impiegatoPer) {
 		this.impiegatoPer = impiegatoPer;
 	}
-
-
-
-	
-	
-	
 }
