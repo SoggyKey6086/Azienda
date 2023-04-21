@@ -62,8 +62,19 @@ public class Impiegati implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "id_rep", nullable = false)
 	private Reparti repartiImp;
-
 	
+	@ManyToOne
+	@JoinColumn(name = "id_r", nullable = false)
+	private Ruoli ruoliImp;
+
+	public Ruoli getRuoliImp() {
+		return ruoliImp;
+	}
+
+	public void setRuoliImp(Ruoli ruoliImp) {
+		this.ruoliImp = ruoliImp;
+	}
+
 	public Reparti getRepartiImp() {
 		return repartiImp;
 	}
