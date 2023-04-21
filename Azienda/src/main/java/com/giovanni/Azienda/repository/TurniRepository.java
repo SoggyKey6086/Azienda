@@ -7,5 +7,4 @@ import com.giovanni.Azienda.model.Turni;
 
 @Repository("turniRepository")
 public interface TurniRepository extends JpaRepository<Turni, Integer> {
-
 }
