@@ -27,5 +27,5 @@ public interface PresenzeRepository extends JpaRepository<Presenze, Integer> {
 			+ "JOIN Impiegati ON Presenze.id_imp = Impiegati.id_imp\r\n"
 			+ "WHERE Presenze.data BETWEEN ?1 AND  ?2\r\n"
 			+ "GROUP BY Impiegati.id_imp, Impiegati.nome, Impiegati.cognome", nativeQuery= true)
-	public List<String[]> findByIdImp(int idPre);
+	public List<String[]> findOrePermessi(int idPre);
 }
