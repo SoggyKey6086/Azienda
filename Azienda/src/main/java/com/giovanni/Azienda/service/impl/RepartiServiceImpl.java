@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.giovanni.Azienda.model.Reparti;
 import com.giovanni.Azienda.repository.RepartiRepository;
 import com.giovanni.Azienda.service.RepartiService;
 
+@Service
 public class RepartiServiceImpl implements RepartiService {
 	
 	@Autowired

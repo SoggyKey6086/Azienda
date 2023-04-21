@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.giovanni.Azienda.model.Presenze;
 import com.giovanni.Azienda.repository.PresenzeRepository;
 import com.giovanni.Azienda.service.PresenzeService;
 
+@Service
 public class PresenzeServiceImpl implements PresenzeService{
 	
 	@Autowired
