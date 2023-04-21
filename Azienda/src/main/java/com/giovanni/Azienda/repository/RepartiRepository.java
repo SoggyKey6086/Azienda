@@ -15,5 +15,5 @@ public interface RepartiRepository extends JpaRepository<Reparti, Integer>{
 	public Optional<Reparti> findById(Integer idRep);
 	
 	@Query(value = "SELECT reparti.nome AS reparti, COUNT(*) AS totale_impiegati FROM reparti INNER JOIN impiegati  ON reparti.id_rep = impiegati.id_rep GROUP BY reparti.nome", nativeQuery = true)
-	public List<String[]> findQtaImpXRep(int id);
+	public List<String[]> findQtaImpXRep(int idRep);
 }
