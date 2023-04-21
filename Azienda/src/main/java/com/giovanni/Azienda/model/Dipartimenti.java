@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table
 public class Dipartimenti implements Serializable {
 	private static final long serialVersionUID = -5677868630895730332L;
-
+	// coomento di prova
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int IdDip;
