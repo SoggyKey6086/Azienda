@@ -21,6 +21,7 @@ public class Ruoli implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name = "id_r")
 	private int idR;
 	
 	@Column
