@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.giovanni.Azienda.model.Ferie;
-
-@Repository("ferieRepository")
+@Repository
 public interface FerieRepository extends JpaRepository<Ferie, String>{
 
 	@Query(value = "SELECT impiegati.nome, impiegati.cognome, COUNT(*) AS totale_ferie " +
