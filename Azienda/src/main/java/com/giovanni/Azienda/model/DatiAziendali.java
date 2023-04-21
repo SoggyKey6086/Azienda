@@ -84,6 +84,4 @@ public class DatiAziendali implements Serializable{
 	public void setReparto(Reparti reparto) {
 		this.reparto = reparto;
 	}
-	
-	
 }
