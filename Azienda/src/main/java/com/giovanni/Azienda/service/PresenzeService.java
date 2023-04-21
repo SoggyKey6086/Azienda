@@ -10,6 +10,9 @@ public interface PresenzeService {
 	List<Presenze> getAll();
 	Optional<Presenze> findById(int id);
 	void deletePresenze(Presenze presenze);
+	List<String[]> findQtaPresenze(int id);	
+	List<String[]> findQtaAssenze(int id);
+	List<String[]> findOrePermessi(int id);
 	
 }
 
