@@ -37,4 +37,9 @@ public class ImpiegatiServiceImpl implements ImpiegatiService {
 		ir.delete(impiegati);
 	}
 
+	@Override
+	public Optional<Impiegati> findByIdRepName(int id) {
+		return ir.findByIdRepName(id);
+	}
+
 }

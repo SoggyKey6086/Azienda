@@ -11,4 +11,5 @@ public interface ImpiegatiService {
 	List<Impiegati> getAll();
 	Optional<Impiegati> findById(int id);
 	void deleteImpiegati(Impiegati impiegati);
+	Optional<Impiegati> findByIdRepName(int id);
 }

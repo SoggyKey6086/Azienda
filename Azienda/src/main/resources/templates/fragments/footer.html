@@ -1,5 +1,6 @@
 <div th:fragment="footer" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <nav>
+	<h3>Navigazione</h3>
 	<ul sec:authorize="hasRole('ADMIN')">
 		<li><a href="/admin">Home page</a></li>
 		<li><a href="/admin/gestioneArticoli">Gestione Articoli</a></li>
