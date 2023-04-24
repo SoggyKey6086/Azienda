@@ -1,0 +1,26 @@
+<div th:fragment="footer" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<nav>
+	<ul sec:authorize="hasRole('ADMIN')">
+		<li><a href="/admin">Home page</a></li>
+		<li><a href="/admin/gestioneArticoli">Gestione Articoli</a></li>
+		<li><a href="/admin/gestioneOrdini">Gestione Articoli</a></li>
+	</ul>
+</nav>
+<nav>
+	<h3>Contatti</h3>
+	<ol>
+		<li><a href="#">Contatti</a></li>
+		<li><a href="#">Aiuto</a></li>
+		<li><a href="#">Site Map</a></li>
+	</ol>
+</nav>
+<section>
+	<h3>Network</h3>
+	<ul>
+		<li><a href="#">Facebook</a></li>
+		<li><a href="#">Instagram</a></li>
+		<li><a href="#">Twitter</a></li>
+	</ul>
+</section>
+<p class="copyright">Negozio On-line<sup>&copy;</sup></p>
+</div>
