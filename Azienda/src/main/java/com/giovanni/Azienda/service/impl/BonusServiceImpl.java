@@ -17,7 +17,7 @@ public class BonusServiceImpl implements BonusService {
 	BonusRepository br;
 
 	@Override
-	public void saveImpiegati(Bonus bonus) {
+	public void saveBonus(Bonus bonus) {
 		br.save(bonus);
 
 	}

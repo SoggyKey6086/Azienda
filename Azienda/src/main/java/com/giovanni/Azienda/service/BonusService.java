@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.giovanni.Azienda.model.Bonus;
 
 public interface BonusService {
-	void saveImpiegati(Bonus bonus);
+	void saveBonus(Bonus bonus);
 	List<Bonus> getAll();
 	Optional<Bonus> findById(int id);
 	void deleteImpiegati(Bonus bonus);
