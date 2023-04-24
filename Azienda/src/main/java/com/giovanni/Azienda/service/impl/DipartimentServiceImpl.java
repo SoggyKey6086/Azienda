@@ -11,15 +11,15 @@ import com.giovanni.Azienda.repository.DipartimentiRepository;
 import com.giovanni.Azienda.service.DipartimentiService;
 
 @Service
-public class DipartimentServiceImpl implements DipartimentiService{
+public class DipartimentServiceImpl implements DipartimentiService {
 
 	@Autowired
 	DipartimentiRepository dr;
-	
+
 	@Override
 	public void saveDipartimenti(Dipartimenti Dipartimenti) {
 		dr.save(Dipartimenti);
-		
+
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class DipartimentServiceImpl implements DipartimentiService{
 
 	@Override
 	public Optional<Dipartimenti> findById(int id) {
-		
+
 		return dr.findById(id);
 	}
 
@@ -39,7 +39,7 @@ public class DipartimentServiceImpl implements DipartimentiService{
 	}
 
 	@Override
-	public List<String[]> findQtaImpXImp(int idDip) {
+	public List<String[]> findQtaImpXDip(int idDip) {
 		return dr.findQtaImpXImp(idDip);
 	}
 
