@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.giovanni.Azienda.model.Dipartimenti;
 import com.giovanni.Azienda.repository.DipartimentiRepository;
 import com.giovanni.Azienda.service.DipartimentiService;
 
+@Service
 public class DipartimentServiceImpl implements DipartimentiService{
 
 	@Autowired
@@ -37,7 +39,7 @@ public class DipartimentServiceImpl implements DipartimentiService{
 	}
 
 	@Override
-	public Optional<Dipartimenti> findQtaImpXImp(int idDip) {
+	public List<String[]> findQtaImpXImp(int idDip) {
 		return dr.findQtaImpXImp(idDip);
 	}
 

@@ -17,7 +17,7 @@ public interface DipartimentiRepository extends JpaRepository<Dipartimenti, Inte
 	
 	@Query(value = "SELECT dipartimenti.nome AS dipartimenti, COUNT(*) AS totale_impiegati FROM dipartimenti INNER JOIN impiegati  ON "
 			+ "dipartimenti.id_dip = impiegati.id_dip GROUP BY dipartimenti.nome", nativeQuery = true)
-	public Optional<Dipartimenti> findQtaImpXImp(int idDip);
+	public List<String[]> findQtaImpXImp(int idDip);
 	
 
 }

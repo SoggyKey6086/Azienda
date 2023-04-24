@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.giovanni.Azienda.model.Ruoli;
 import com.giovanni.Azienda.repository.RuoliRepository;
 import com.giovanni.Azienda.service.RuoliService;
 
+@Service
 public class RuoliServiceImpl implements RuoliService {
 
 	@Autowired 
