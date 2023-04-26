@@ -115,6 +115,12 @@ public class GenController {
 			String[] s = {String.valueOf(i.getIdImp()) ,i.getNome(), i.getCap(), i.getCitta(), i.getCognome(), i.getNome(), String.valueOf(i.getRepartiImp()), String.valueOf(i.getRuoliImp())};
 			lista.add(s);
 		}
+		List<Reparti> listaR = reps.getAll();
+		List<String> lista2 = new ArrayList<String>();
+		for(Reparti r : listaR) {
+			String s = r.getNome();
+			lista2.add(s);
+		}
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("impiegato", new Impiegati());
 		mv.addObject("lista", lista);
