@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/cdn :: cdn"></head>
+<body>
+	<div th:insert="fragments/nav :: navbar"></div>
+	<div class="container">
+		<header class="page-header">
+			<h3>Gestione Ruoli</h3>
+		</header>
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a th:href="@{/homepage}">Home</a>
+			</li>
+
+			<li role="presentation"><a th:href="@{/datiAziendali}">Gestione 
+			Dati Aziendali</a></li>
+
+			<li role="presentation"><a th:href="@{/reparto}">Gestione 
+			Reparti</a></li>
+			
+			<li role="presentation"><a th:href="@{/dipartimenti}">Gestione 
+			Dipartimenti</a></li>
+			
+			<li role="presentation" class="active"><a th:href="@{/ruoli}">Gestione 
+			Ruoli</a></li>
+			
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+  				data-toggle="dropdown" role="button">Gestione Dati Dipendente</a>
+  					<ul class="dropdown-menu">
+  					
+  						<li role="presentation" ><a th:href="@{/impiegato}">Gestione Impiegati</a></li>
+  						
+  						<li role="presentation"><a th:href="@{/turni}">Gestione Turni</a></li>
+			
+						<li role="presentation"><a th:href="@{/presenze}">Gestione Presenze</a></li>
+			
+						<li role="presentation"><a th:href="@{/permessi}">Gestione Permessi</a></li>			
+			
+						<li role="presentation"><a th:href="@{/ferie}">Gestione Ferie</a></li>
+			
+						<li role="presentation"><a th:href="@{/salari}">Gestione Salario</a></li>
+			
+						<li role="presentation"><a th:href="@{/bonus}">Gestione Bonus</a></li>
+				</ul>
+  			</li>
+		</ul>
+		
+		<div class="row">
+			<button class="btn btn-info" style="float:left; margin-top: 10px;" onclick="show()" >
+				Nuovo Ruolo
+			</button>
+			
+			<div class="alert alert-info" id="add-form" style="padding: 10px; margin-top: 50px; margin-bottom: 50px; display: none;">
+				<h4 class="alert alert-heading" style="text-align: center">Nuovo Ruolo</h4>
+				<hr>
+				<form th:action="@{/aggiungiRuoli}" th:object="${ruoli}" id="ruoliForm" method="post" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-md-1 control-label">Nome</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-user"></i>
+								</span>
+								<input type="text" th:field="*{nome}" name="nome" id="nome" placeholder="Nome.." class="form-control">
+							</div>
+						</div>
+						<div class="col-md-7 control label" id="infoNome"></div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-md-1 control-label">Descrizione</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-tasks"></i>
+								</span>
+								<input type="text" th:field="*{descrizione}" name="descrizione" id="descrizione" placeholder="Descrizione.." class="form-control">
+							</div>
+						</div>
+						<div class="col-md-7 control label" id="infoDescrizione"></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-4 col-md-offset-1">
+							<button type="submit" class="btn btn-primary">
+								Aggiungi Ruoli
+								<span>
+									<i class="glyphicon glyphicon-send"></i>
+								</span>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<script>
+			function show() {
+				if($('#add-form').is(":visible")) {
+					$('#add-form').fadeOut(300);
+				}else {
+					$('#add-form').fadeIn(300);
+				}
+			}
+		</script>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Descrizione</th>
+					<th>Elimina</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ruoli : ${lista}" style="vertical-align: middle;">
+					
+					<td style="vertical-align: middle;" th:text="${ruoli[1]}"></td>
+					
+					<td style="vertical-align: middle;" th:text="${ruoli[2]}"></td>
+					
+					<td style="vertical-align: middle;">
+						<a th:href="@{|/deleteRuoli/${ruoli[0]}|}" role="button" class="btn btn-danger">
+							Elimina
+							<span>
+								<i class="glyphicon glyphicon-trash"></i>
+							</span>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<footer th:include="fragments/footer :: footer"></footer>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package com.giovanni.Azienda.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.giovanni.Azienda.model.Ruoli;
 import com.giovanni.Azienda.model.Impiegati;
 import com.giovanni.Azienda.model.Reparti;
 import com.giovanni.Azienda.service.BonusService;
@@ -134,4 +136,35 @@ public class GenController {
 		is.deleteImpiegati(i);
 		return new ModelAndView("redirect:/impiegato");
 	}
+	
+	//-------------------------- Ruolo --------------------
+
+		@GetMapping(value ="/ruoli")
+		public ModelAndView gestioneRuoli(HttpSession session) {
+			List<Ruoli> listaRuoli = ruos.getAll();
+			List<String[]> lista =new ArrayList<String[]>();
+			for(Ruoli r : listaRuoli) {
+				String[] s = {String.valueOf(r.getIdR()), r.getNome(), r.getDescrizione()};
+				lista.add(s);
+		}
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("ruoli", new Ruoli());
+		mv.addObject("lista", lista);
+		mv.setViewName("ruoli");
+		return mv;	
+	}
+
+		@PostMapping(value ="/aggiungiRuoli")
+		public ModelAndView aggiungiRuoli(Ruoli ruoli) {
+			ruos.saveRuoli(ruoli);
+			return new ModelAndView("redirect:/ruoli");
+		}
+		
+		@GetMapping(value ="/deleteRuoli/{id}")
+		public ModelAndView deleteRuoli(@PathVariable int id) {
+			Ruoli r = ruos.findById(id).get();
+			ruos.deleteRuoli(r);
+			return new ModelAndView("redirect:/ruoli");
+			
+		}
 }
