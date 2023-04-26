@@ -175,15 +175,33 @@ public class GenController {
 			
 		}
 		
-	//-------------------------- DatiAziendali --------------------
-		
-		@GetMapping(value="/datiAziendali")
-		public ModelAndView gestionedatiAziendali(HttpSession session) {			
-			List<DatiAziendali> listaDatiAziendali = das.getAll();
-			List<String []> lista = new ArrayList<String []>();
-			for(DatiAziendali d: listaDatiAziendali) {
-				String[] = {String.valueOf(d.getIdDA(), d.getEmail(), d.getData_assunzione(), d.getData_nascita(), d.getSalario())
-			}
-		
-	}	
+//	//-------------------------- DatiAziendali --------------------
+//		
+//		@GetMapping(value="/datiAziendali")
+//		public ModelAndView gestionedatiAziendali(HttpSession session) {			
+//			List<DatiAziendali> listaDA = das.getAll();
+//			List<String[]> lista = new ArrayList<String[]>();
+//			for(DatiAziendali d : listaDA) {
+//				String[] s = {String.valueOf(d.getIdDA()), String.valueOf(d.getData_assunzione()), String.valueOf(d.getData_nascita()), String.valueOf(d.getSalario()),d.getEmail()};
+//				lista.add(s);
+//			}
+//			ModelAndView mv = new ModelAndView();
+//			mv.addObject("datiaziendali", new DatiAziendali());
+//			mv.addObject("lista", lista);
+//			mv.setViewName("datiaziendali");
+//			return mv;
+//	}	
+//		@PostMapping(value ="/aggiungiDatiAziendali")
+//		public ModelAndView aggiungiDatiAziendali(Ruoli ruoli) {
+//			ruos.saveRuoli(datiAziendali);
+//			return new ModelAndView("redirect:/datiAziendali");
+//		}
+//		
+//		@GetMapping(value ="/deleteRuoli/{id}")
+//		public ModelAndView deleteDatiAziendali(@PathVariable int id) {
+//			DatiAziendali da = das.findById(id).get();
+//			das.deletedatiAziendali(da);
+//			return new ModelAndView("redirect:/datiAziendali");
+//			
+//		}
 }
