@@ -1,4 +1,4 @@
-package com.giovanni.Azienda.controller;
+	package com.giovanni.Azienda.controller;
 
 import java.util.ArrayList;
 
@@ -114,13 +114,13 @@ public class GenController {
 		List<Impiegati> listaI = is.getAll();
 		List<String[]> lista = new ArrayList<String[]>();
 		for(Impiegati i : listaI) {
-			String[] s = {String.valueOf(i.getIdImp()) ,i.getNome(), i.getCap(), i.getCitta(), i.getCognome(), i.getNome(), String.valueOf(i.getRepartiImp()), String.valueOf(i.getRuoliImp())};
+			String[] s = {String.valueOf(i.getIdImp()) ,i.getNome(), i.getCap(), i.getCitta(), i.getCognome(), String.valueOf(i.getRepartiImp()), String.valueOf(i.getRuoliImp())};
 			lista.add(s);
 		}
 		List<Reparti> listaR = reps.getAll();
 		List<String> lista2 = new ArrayList<String>();
 		for(Reparti r : listaR) {
-			String s = r.getNome();
+			String s = String.valueOf(r.getIdRep());
 			lista2.add(s);
 		}
 		ModelAndView mv = new ModelAndView();
