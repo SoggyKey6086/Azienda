@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.giovanni.Azienda.model.Ruoli;
+import com.giovanni.Azienda.model.DatiAziendali;
 import com.giovanni.Azienda.model.Impiegati;
 import com.giovanni.Azienda.model.Reparti;
 import com.giovanni.Azienda.service.BonusService;
@@ -36,7 +37,7 @@ public class GenController {
 	BonusService bs;
 	
 	@Autowired
-	DatiAziendaliService da;
+	DatiAziendaliService das;
 	
 	@Autowired
 	DipartimentiService ds;
@@ -167,4 +168,16 @@ public class GenController {
 			return new ModelAndView("redirect:/ruoli");
 			
 		}
+		
+	//-------------------------- DatiAziendali --------------------
+		
+		@GetMapping(value="/datiAziendali")
+		public ModelAndView gestionedatiAziendali(HttpSession session) {			
+			List<DatiAziendali> listaDatiAziendali = das.getAll();
+			List<String []> lista = new ArrayList<String []>();
+			for(DatiAziendali d: listaDatiAziendali) {
+				String[] = {String.valueOf(d.getIdDA(), d.getEmail(), d.getData_assunzione(), d.getData_nascita(), d.getSalario())
+			}
+		
+	}	
 }
