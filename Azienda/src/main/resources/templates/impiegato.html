@@ -5,7 +5,7 @@
 	<div th:insert="fragments/nav :: navbar"></div>
 	<div class="container">
 		<header class="page-header">
-			<h3>Gestione Articoli</h3>
+			<h3>Gestione Impiegati</h3>
 		</header>
 		<ul class="nav nav-tabs">
 			<li role="presentation"><a th:href="@{/homepage}">Home</a>
@@ -106,18 +106,35 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="col-md-1 control-label">ID Reparto</label>
+						<label class="col-md-1 control-label">Id/Reparto</label>
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon">
-									<i class="glyphicon glyphicon-home"></i>
+									<i class="glyphicon glyphicon-bookmark"></i>
 								</span>
-								<input type="text" th:field="*{id_rep}" name="id_rep" id="id_rep" placeholder="ID Repato.." class="form-control">
+								<select th:field="*{repartiImp}" id="reparto" name="reparto" class="form-control">
+    								<option th:each="reparto : ${lista3}" th:value="${lista3}" th:text="${lista3}"></option>
+								</select>
 							</div>
 						</div>
-						<div class="col-md-7 control label" id="infoId_rep"></div>
+						<div class="col-md-7 control label" id="infoRepartiImp"></div>
 					</div>
 					
+					<div class="form-group">
+						<label class="col-md-1 control-label">Id/Ruolo</label>
+						<div class="col-md-4 inputGroupContainer">
+							<div class="input-group">
+								<span class="input-group-addon">
+									<i class="glyphicon glyphicon-bookmark"></i>
+								</span>
+								<select th:field="*{ruoliImp}" id="ruoli" name="ruoli" class="form-control">
+    								<option th:each="impiegato : ${lista2}" th:value="${impiegato}" th:text="${impiegato}"></option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-7 control label" id="infoRuoliImp"></div>
+					</div>
+
 					<div class="row">
 						<div class="col-md-4 col-md-offset-1">
 							<button type="submit" class="btn btn-primary">
@@ -154,7 +171,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="reparto : ${lista}" style="vertical-align: middle;">
+				<tr th:each="impiegato : ${lista}" style="vertical-align: middle;">
 					
 					<td style="vertical-align: middle;" th:text="${impiegato[1]}"></td>
 					
@@ -175,6 +192,7 @@
 				</tr>
 			</tbody>
 		</table>
+		
 	</div>
 	<footer th:include="fragments/footer :: footer"></footer>
 </body>

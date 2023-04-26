@@ -118,15 +118,25 @@ public class GenController {
 			String[] s = {String.valueOf(i.getIdImp()) ,i.getNome(), i.getCap(), i.getCitta(), i.getCognome(), String.valueOf(i.getRepartiImp()), String.valueOf(i.getRuoliImp())};
 			lista.add(s);
 		}
-		List<Reparti> listaR = reps.getAll();
+		
+		List<Ruoli> listaRu = ruos.getAll();
 		List<String> lista2 = new ArrayList<String>();
-		for(Reparti r : listaR) {
-			String s = String.valueOf(r.getIdRep());
+		for(Ruoli ru : listaRu) {
+			String s = String.valueOf(ru.getIdR());
+			lista2.add(s);
+		}
+		
+		List<Reparti> listaRep = reps.getAll();
+		List<String> lista3 = new ArrayList<String>();
+		for(Reparti reps : listaRep) {
+			String s = String.valueOf(reps.getIdRep());
 			lista2.add(s);
 		}
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("impiegato", new Impiegati());
 		mv.addObject("lista", lista);
+		mv.addObject("lista2", lista2);
+		mv.addObject("lista3", lista3);
 		mv.setViewName("impiegato");
 		return mv;
 	}
