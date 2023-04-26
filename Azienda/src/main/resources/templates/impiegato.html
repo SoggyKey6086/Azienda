@@ -106,16 +106,16 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="col-md-1 control-label">Reparto</label>
+						<label class="col-md-1 control-label">ID Reparto</label>
 						<div class="col-md-4 inputGroupContainer">
 							<div class="input-group">
 								<span class="input-group-addon">
-									<i class="glyphicon glyphicon-user"></i>
+									<i class="glyphicon glyphicon-home"></i>
 								</span>
-								<input type="text" th:field="*{cognome}" name="cognome" id="cognome" placeholder="Cognome.." class="form-control">
+								<input type="text" th:field="*{id_rep}" name="id_rep" id="id_rep" placeholder="ID Repato.." class="form-control">
 							</div>
 						</div>
-						<div class="col-md-7 control label" id="infoCognome"></div>
+						<div class="col-md-7 control label" id="infoId_rep"></div>
 					</div>
 					
 					<div class="row">
@@ -145,19 +145,27 @@
 			<thead>
 				<tr>
 					<th>Nome</th>
-					<th>Descrizione</th>
+					<th>Cognome</th>
+					<th>Citt&agrave;</th>
+					<th>Cap</th>
+					<th>Reparto</th>
+					<th>Ruolo</th>
 					<th>Elimina</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="reparto : ${lista}" style="vertical-align: middle;">
 					
-					<td style="vertical-align: middle;" th:text="${reparto[1]}"></td>
+					<td style="vertical-align: middle;" th:text="${impiegato[1]}"></td>
 					
-					<td style="vertical-align: middle;" th:text="${reparto[2]}"></td>
+					<td style="vertical-align: middle;" th:text="${impiegato[4]}"></td>
+					
+					<td style="vertical-align: middle;" th:text="${impiegato[3]}"></td>
+					
+					<td style="vertical-align: middle;" th:text="${impiegato[2]}"></td>
 					
 					<td style="vertical-align: middle;">
-						<a th:href="@{|/eliminaReparto/${reparto[0]}|}" role="button" class="btn btn-danger">
+						<a th:href="@{|/eliminaImpiegato/${impiegato[0]}|}" role="button" class="btn btn-danger">
 							Elimina
 							<span>
 								<i class="glyphicon glyphicon-trash"></i>
