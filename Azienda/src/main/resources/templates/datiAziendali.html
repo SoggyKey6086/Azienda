@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/cdn :: cdn"></head>
+<body>
+	<div th:insert="fragments/nav :: navbar"></div>
+	<div class="container">
+		<header class="page-header">
+			<h3>Gestione Articoli</h3>
+		</header>
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a th:href="@{/homepage}">Home</a>
+			</li>
+			
+			<li role="presentation" class="active"><a th:href="@{/datiAziendali}">Dati Aziendali</a>
+			</li>
+			
+			<li role="presentation"><a th:href="@{/reparto}">Gestione Reparto</a>
+			</li>
+			
+			<li role="presentation"><a th:href="@{/dipartimenti}">Gestione Dipartimenti</a>
+			</li>
+			
+			<li role="presentation"><a th:href="@{/ruoli}">Gestione Ruoli</a>
+			</li>
+			
+			<li class="dropdown"><a th:href="#" class="dropdown-toggle"
+				data-toggle="dropdown" role="button">Gestione Dati Dipendente</a>
+					<ul class="drpdown-menu">
+					
+					<li role="presentation"><a th:href="@{/impiegato}">Gestione Impiegato</a></li>
+					
+					<li role="presentation"><a th:href="@{/turni}">Gestione Turni</a></li>
+					
+					<li role="presentation"><a th:href="@{/presenze}">Gestione Presenze</a></li>
+					
+					<li role="presentation"><a th:href="@{/permessi}">Gestione Permessi</a></li>
+					
+					<li role="presentation"><a th:href="@{/ferie}">Gestione Ferie</a></li>
+		
+					<li role="presentation"><a th:href="@{/salari}">Gestione Salario</a></li>
+					
+					<li role="presentation"><a th:href="@{/bonus}">Gestione Bonus</a></li>
+			</ul>
+		</li>
+	</ul>
+	
+	<div class="row">
+		<button class="btn btn-info" style="float:left; margin-top: 10px;" onclick="show()">Nuovo Dipartimento</button>
+	
+	<div class="alert alert-info" id="add-form" style="padding: 10px; margin-top: 50px; margin-bottom: 50px; display: none;">
+		<h4 class="alert alert-heading" style="text-align: center">Nuovo Dipartimento</h4>
+		<hr>
+		<form th:action="@{/aggiungiDipartimento}" th:object="${dipartimento}"id="dipartimentoForm" method="post" class="form-horizontal">
+			<div class="form-group">
+				<label class="col-md-1 control-label">Email</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon">
+							<i class="glyphicon glyphicon-envelope"></i>
+						</span>
+						<input type="text" th:field="*{email}" name="email" id="email" placeholder="Email.." class="form-control">
+					</div>
+				</div>
+				<div class="col-md-7 control label" id></div>
+			</div>
+		</form>
+	
+	
+	</div>
+	</div>
+		
+</div>
+</body>
+</html>
